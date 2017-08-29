@@ -1,0 +1,4 @@
+__label__account_credit __label__axis Hello! Your a/c no 08982901 has been credited with Rs .33 on 2017-07-07. The a/c balance is Rs 26636.17. Info: TIPS/SCG/POS/WWW.ALIEXPRESS.COM/DT.05-JU
+__label__debit __label__axis __label__uber Your a/c 066036 is debited INR 190.96 on 19-07-2017 09:02:41 A/c Bal is INR 32930.34 Info: PUR/ZES*UBER INDIA SYSTEMS/NEW DELHI/ZES*UBER INDIA SYSTEMS/Seq No 186020
+__label__neft __label__axis Your NEFT Txn. with Ref. No AXMB171955432125 for Rs. 21000 has been credited to Beneficiary : Patel Vishakha A on July 14,2017 at 10:34:24 Hrs.
+__label__cc __label__edunetwork __label__axis INR 999 was spent on your Credit Card XX5806 on 13-Jul-17 at Edunetwork Private. Avbl Lmt: Rs.1232.89 Track spends with Axis Mobile: m.axisbank.com/ccd
