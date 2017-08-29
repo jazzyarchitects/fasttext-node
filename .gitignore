@@ -68,3 +68,9 @@ lib
 
 # build folder
 dist/
+
+
+# model files
+*.bin
+*.vec
+*.txt

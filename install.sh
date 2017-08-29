@@ -7,12 +7,27 @@ GIT_EXISTS=$?
 # Checking if git exists. Git is required for cloning fast text library
 if [ "$GIT_EXISTS"  -eq "0" ]
 then
-  echo -e "\033[0;32m\033[1mInstalling FastText-Node Module\033[0m"
+  echo -e "\033[0;32m\033[1mGit is installed... Cool...!!!\033[0m"
 else
   echo -e "\033[0;31mGit not installed in your system. Install git to use \033[1m\033[4mFastText-Node\033[0;31m  module \033[0m"
   exit 1
 fi
 
+# Check if curl is installed
+CURL_COMMAND=$(curl --version)
+
+CURL_EXISTS=$?
+
+if [ "$CURL_EXISTS" -eq "0" ]
+then
+  echo -e "\033[0;32m\033[1mCurl is installed... Cool...!!!\033[0m"
+else
+  echo -e "\033[0;31mCurl not installed in your system. Install curl to use \033[1m\033[4mFastText-Node\033[0;31m  module \033[0m"
+  exit 1
+fi
+
+
+echo -e "\033[0;32m\033[1mInstalling FastText-Node Module\033[0m"
 
 echo -e "\033[0;32mDownloading Fast Text Library\033[0m"
 
