@@ -1,0 +1,14 @@
+{
+  "name": "fasttext-node",
+  "version": "1.0.0",
+  "description": "Node wrapper around facebook's fasttext library",
+  "scripts": {
+    "install": "./install.sh"
+  },
+  "main": "index.js",
+  "author": "Jibin Mathews<jibinmathews7@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
