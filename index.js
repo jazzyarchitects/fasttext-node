@@ -1,5 +1,6 @@
 "use strict";
 
-module.exports = function(){
-  console.log("Hello");
-}
+const path = require('path');
+const FastText = require(path.join(__dirname, 'dist', 'lib'));
+
+module.exports = FastText;

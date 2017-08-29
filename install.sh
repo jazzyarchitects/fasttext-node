@@ -28,3 +28,12 @@ cd fastText
 make
 
 echo -e "\033[0;32m\033[1mInstalled FastText-Node Library\033[0m"
+
+echo ""
+
+echo -e "\033[0;32m\033[1mBuilding node module\033[0m"
+
+cd ..
+./node_modules/.bin/grunt build
+
+echo -e "\033[0;32m\033[1mFinished installing module\033[0m"
