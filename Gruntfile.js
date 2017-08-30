@@ -5,45 +5,24 @@ module.exports = function(grunt) {
   grunt.initConfig({
     clean: {
       lib: {
-        src: ['dist/**/*.*', 'dist/**', 'public/js/bundle.js'],
-      },
-      test: {
-        src: ['test/**/*.js', '!test/**/*.es6.js'],
+        src: ['dist/**/*.*'],
       },
     },
 
     babel: {
-      lib: {
-        options: {
-          sourceMap: false,
-          presets: ['env'],
-        },
-        modules: {
-          files: [
-            {
-              expand: true,
-              cwd: 'lib/',
-              src: ['**/*.js'],
-              dest: 'dist/lib/',
-            },
-          ],
-        },
+      options: {
+        sourceMap: false,
+        presets: ['env'],
       },
-      test: {
-        options: {
-          sourceMap: false,
-          presets: ['env'],
-        },
-        modules: {
-          files: [
-            {
-              expand: true,
-              cwd: 'test/',
-              src: ['**/*.es6.js'],
-              dest: 'test/',
-            },
-          ],
-        },
+      modules: {
+        files: [
+          {
+            expand: true,
+            cwd: 'lib/',
+            src: ['**/*.js'],
+            dest: 'dist/lib/',
+          },
+        ],
       },
     },
 
@@ -55,19 +34,12 @@ module.exports = function(grunt) {
       lib: {
         src: ['lib/**/*.js'],
       },
-      test: {
-        src: ['test/**/*.es6.js'],
-      },
     },
 
     watch: {
       lib: {
         files: ['./lib/**/*.js'],
-        tasks: ['clean:lib', 'eslint:lib', 'babel:lib'],
-      },
-      test: {
-        files: ['./test/**/*.es6.js'],
-        tasks: ['clean:test', 'eslint:test', 'bable:test'],
+        tasks: ['clean', 'eslint', 'babel'],
       },
     },
   });

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Node wrapper around facebook's fasttext library",
   "scripts": {
-    "install": "./install.sh"
+    "install": "./install.sh",
+    "test": "node test/index.js"
   },
   "main": "index.js",
   "author": "Jibin Mathews<jibinmathews7@gmail.com>",

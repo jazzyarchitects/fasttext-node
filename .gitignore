@@ -60,9 +60,6 @@ typings/
 # fastText repo
 fastText
 
-# Compiled code
-lib
-
 # macOS
 .DS_Store
 
