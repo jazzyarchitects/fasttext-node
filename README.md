@@ -37,7 +37,7 @@ To use this module in your code, you can import this directly:
 
 ### Training
 
-The module exposes a ___train___ method which can be used to train a new model.
+The module exposes a ___train___ method which can be used to train a new model. The training methodology is **supervised** learning.
 
 ```js
   const trainResult = await fastext.train('https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt', 
@@ -112,6 +112,12 @@ The options arguments is a JSON object with the following properties:
     <td>12</td>
     <td>Number of threads</td>
   </tr>
+  <tr>
+    <td>model</td>
+    <td>string</td>
+    <td>training-model</td>
+    <td>The path to save the model</td>
+  </tr>
 </table>
 
 ### Prediction
@@ -119,19 +125,48 @@ The options arguments is a JSON object with the following properties:
 After the training has finished, the model can be used to predict the labels of new strings.  
 
 ```js
+
+  const options = {
+    labelCount: 3
+  }
+
   const result = await fastext.predict([
     'Custard Pudding tasting like raw eggs',
     'Is Himalayan pink salt the same as the pink salt used for curing?',
-  ]);
+  ], options);
 
   // OR 
 
   const result = await fastext.predict(`
     Custard Pudding tasting like raw eggs
-    Is Himalayan pink salt the same as the pink salt used for curing?`
+    Is Himalayan pink salt the same as the pink salt used for curing?`,
+    options
   );
 ```
 The predict function will return an array of predictions for each input. Each input should be on a different line in the string or in the form of an array.
+
+The second argument to the predict function is a JSON object with the following options
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Default Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>labelCount</td>
+    <td>number</td>
+    <td>3</td>
+    <td>Number of labels to return per input string</td>
+  </tr>
+  <tr>
+    <td>model</td>
+    <td>string</td>
+    <td>training-model</td>
+    <td>The file path of model to use for predicting the labels. Do NOT put any extension of model file (.bin or .vec)</td>
+  </tr>
+</table>
+
 
 Example output:
 
