@@ -3,7 +3,7 @@ const colors = require('colors');
 
 async function trainTest() {
   // eslint-disable-next-line
-  const fastext = new FastText.default();
+  const fastext = new FastText();
   try {
     await fastext.train(
       'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt',
@@ -19,7 +19,7 @@ async function trainTest() {
 
 async function testData() {
   // eslint-disable-next-line
-  const fastext = new FastText.default();
+  const fastext = new FastText();
   try {
     const result = await fastext.predict([
       'Custard Pudding tasting like raw eggs',
@@ -35,7 +35,11 @@ async function testData() {
   return true;
 }
 
-trainTest().then(testData).then(() => {
-  console.log(colors.bold.green('Finished test'));
-  process.exit(0);
-});
+Promise.resolve()
+  .then(trainTest)
+  // Promise.resolve()
+  .then(testData)
+  .then(() => {
+    console.log(colors.bold.green('Finished test'));
+    process.exit(0);
+  });
