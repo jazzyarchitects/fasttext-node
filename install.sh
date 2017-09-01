@@ -1,5 +1,29 @@
 #!/bin/bash
 
+# Python is needed only for word similarity prediction
+#PYTHON2_COMMAND=$(python --version)
+#PYTHON2_EXISTS=$?
+
+# Checking if python exists
+
+# Check if c++ is installed
+C_COMMAND=$(c++ --version)
+C_EXISTS=$?
+
+if [ "$C_EXISTS" -eq "0" ]
+then 
+  echo -e "\033[0;32m\033[1mc++ compiler is installed... Cool...!!!\033[0m"
+else 
+  GCC_COMMAND=$(gcc --version)
+  GCC_EXISTS=$?
+
+  if [ "$GCC_EXISTS" -eq "0" ]
+  then 
+    echo -e "\033[0;32m\033[1mgcc c++ compiler is installed... Cool...!!!\033[0m"
+  fi
+  echo -e "\033[0;31mC++ compiler not installed in your system. Install c++ or gcc to use \033[1m\033[4mFastText-Node\033[0;31m  module \033[0m"
+fi
+
 GIT_COMMAND=$(git --version)
 
 GIT_EXISTS=$?
