@@ -1,4 +1,5 @@
 const FastText = require('../index');
+const FastTextTools = require('../tools');
 const colors = require('colors');
 
 async function trainTest() {
@@ -41,7 +42,27 @@ async function testData() {
   return true;
 }
 
+async function generateLabeledData() {
+  console.dir(FastTextTools.toString());
+  const data = [
+    {
+      text: 'Custard Pudding tasting like raw eggs',
+      labels: ['egg', 'custard', 'pudding'],
+    },
+    {
+      text: 'Is Himalayan pink salt the same as the pink salt used for curing?',
+      labels: ['salt', 'curing', 'pink', 'usage'],
+    },
+  ];
+  const labelledData = FastTextTools.generateLabelString(data);
+  console.log(colors.yellow.bold('Labelled Data'));
+  console.log(colors.yellow(labelledData));
+
+  return Promise.resolve(labelledData);
+}
+
 Promise.resolve()
+  .then(generateLabeledData)
   .then(trainTest)
   // Promise.resolve()
   .then(testData)

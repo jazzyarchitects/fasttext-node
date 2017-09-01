@@ -4,7 +4,8 @@
   "description": "Node wrapper around facebook's fasttext library",
   "scripts": {
     "install": "./install.sh",
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "docs": "./node_modules/.bin/jsdoc lib/ -d docs"
   },
   "main": "index.js",
   "author": "Jibin Mathews<jibinmathews7@gmail.com>",
@@ -33,5 +34,8 @@
     "is-url": "^1.2.2",
     "jit-grunt": "^0.10.0",
     "string-to-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.4"
   }
 }
