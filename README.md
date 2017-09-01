@@ -25,6 +25,10 @@ For the word-similarity evaluation script you will need:
 
 This node module requires **git** and **curl** to be installed on your system. Installation will fail without these.
 
+## Documentation
+
+You can find the complete documentation of this module at <a href="https://jazzyarchitects.github.io/FastText/docs/FastText.html">https://jazzyarchitects.github.io/FastText/docs/FastText.html</a>
+
 ## Example
 
 To use this module in your code, you can import this directly:
