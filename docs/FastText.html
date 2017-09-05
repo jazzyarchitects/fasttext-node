@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>FastText<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>FastText<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,7 +41,7 @@
     
 
     
-    <h4 class="name" id="FastText"><span class="type-signature"></span>new FastText<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="FastText"><span class="type-signature"></span>new FastText<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,6 +58,183 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Library configuration
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>model</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    'training-model'
+                
+                </td>
+            
+
+            <td class="description last">The model path which will be used for this instance</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>logs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether to show library logs</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -147,7 +324,7 @@
     
 
     
-    <h4 class="name" id="predict"><span class="type-signature"></span>predict<span class="signature">(string, options)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    <h4 class="name" id="predict"><span class="type-signature"></span>predict<span class="signature">(string, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
     
 
     
@@ -179,7 +356,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -204,7 +385,19 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">String to predict the labels of</td>
@@ -220,14 +413,30 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
             
 
             <td class="description last">Options for training model</td>
@@ -339,7 +548,7 @@
                 </td>
             
 
-            <td class="description last">The model name which will be used to export the saved model</td>
+            <td class="description last">The model name which will be used to export the saved model. This option will override the model options passed in the constructor.</td>
         </tr>
 
     
@@ -378,7 +587,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line110">line 110</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -456,22 +665,22 @@
 
         <p class="code-caption">Result of fastText.predict()</p>
     
-    <pre class="prettyprint"><code>[ 
-   { 
+    <pre class="prettyprint"><code>[
+   {
      input: 'Custard Pudding tasting like raw eggs',
-     predictions: { 
-       eggs: 0.595703, 
-       'egg-whites': 0.00390627, 
-       frying: 0.00390627 
-     } 
+     predictions: {
+       eggs: 0.595703,
+       'egg-whites': 0.00390627,
+       frying: 0.00390627
+     }
    },
-   { 
+   {
      input: 'Is Himalayan pink salt the same as the pink salt used for curing?',
-     predictions: { 
-       salt: 0.166016, 
-       flavor: 0.0136719, 
-       language: 0.0117188 
-   }  
+     predictions: {
+       salt: 0.166016,
+       flavor: 0.0136719,
+       language: 0.0117188
+   }
 ]</code></pre>
 
 
@@ -576,7 +785,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -1013,7 +1222,7 @@
                 </td>
             
 
-            <td class="description last">The model name which will be used to export the saved model</td>
+            <td class="description last">The model name which will be used to export the saved model. This option will override the model options passed in the constructor.</td>
         </tr>
 
     
@@ -1052,7 +1261,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line53">line 53</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -1139,7 +1348,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Fri Sep 01 2017 15:29:01 GMT+0530 (IST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Tue Sep 05 2017 17:53:17 GMT+0530 (IST)
 </footer>
 
 <script> prettyPrint(); </script>
