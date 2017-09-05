@@ -1,7 +1,12 @@
 # Fast Text - Node Module
 
-A node wrapper around FastText library.
+A node wrapper around FastText library.  
+[![Latest Stable Version](https://img.shields.io/npm/v/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
+[![License](https://img.shields.io/npm/l/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
+[![NPM Downloads](https://img.shields.io/npm/dt/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
+[![NPM Downloads](https://img.shields.io/npm/dm/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
 
+[![NPM](https://nodei.co/npm/fasttext-node.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fasttext-node/)
 <hr />
 
 ## About Fast Text
