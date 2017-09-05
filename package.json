@@ -1,6 +1,6 @@
 {
   "name": "fasttext-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node wrapper around facebook's fasttext library",
   "scripts": {
     "install": "./install.sh",
@@ -16,8 +16,7 @@
     "url": "https://github.com/jazzyarchitects/fasttext-node.git"
   },
   "main": "index.js",
-  "author":
-    "Jibin Mathews<jibinmathews7@gmail.com>(http://www.jibinmathews.in)",
+  "author": "Jibin Mathews<jibinmathews7@gmail.com>(http://www.jibinmathews.in)",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
