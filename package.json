@@ -7,8 +7,17 @@
     "test": "node test/index.js",
     "docs": "./node_modules/.bin/jsdoc lib/ -d docs"
   },
+  "bugs": {
+    "url": "https://github.com/jazzyarchitects/fasttext-node/issues",
+    "email": "jibinmathews7@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jazzyarchitects/fasttext-node.git"
+  },
   "main": "index.js",
-  "author": "Jibin Mathews<jibinmathews7@gmail.com>",
+  "author":
+    "Jibin Mathews<jibinmathews7@gmail.com>(http://www.jibinmathews.in)",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
