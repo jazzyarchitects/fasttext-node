@@ -4,7 +4,7 @@ const colors = require('colors');
 
 async function trainTest() {
   // eslint-disable-next-line
-  const fastext = new FastText();
+  const fastext = new FastText({ logs: true });
   try {
     await fastext.train(
       'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt',
@@ -21,7 +21,7 @@ async function trainTest() {
 
 async function testData() {
   // eslint-disable-next-line
-  const fastext = new FastText();
+  const fastext = new FastText({ logs: true });
   try {
     const result = await fastext.predict(
       [
@@ -40,6 +40,24 @@ async function testData() {
     console.log(colors.red('Predict err', err));
   }
   return true;
+}
+
+async function testAcurracy() {
+  const fastext = new FastText({ logs: true });
+  let result;
+  try {
+    result = await fastext.test(
+      'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt',
+      {
+        labelCount: 5,
+        model: 'my-training-model',
+      }
+    );
+  } catch (err) {
+    console.log(colors.red('Testing data err', err));
+  }
+  console.log('Accuracy', result);
+  return result;
 }
 
 async function generateLabeledData() {
@@ -64,8 +82,8 @@ async function generateLabeledData() {
 Promise.resolve()
   .then(generateLabeledData)
   .then(trainTest)
-  // Promise.resolve()
   .then(testData)
+  .then(testAcurracy)
   .then(() => {
     console.log(colors.bold.green('Finished test'));
     process.exit(0);

@@ -32,7 +32,7 @@ This node module requires **git** and **curl** to be installed on your system. I
 
 ## Documentation
 
-You can find the complete documentation of this module at <a href="https://jazzyarchitects.github.io/FastText/docs/FastText.html">https://jazzyarchitects.github.io/FastText/docs/FastText.html</a>
+You can find the complete documentation of this module at <a href="https://jazzyarchitects.github.io/fasttext-node/FastText.html">https://jazzyarchitects.github.io/FastText/docs/FastText.html</a>
 
 ## Example
 
