@@ -2,23 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: FastTextTools</title>
+    <title>Class: FastTextTools | FastText Node</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
 </head>
-
 <body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">FastText Node</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="FastText.html">FastText</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FastText_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FastText.html#cbow">cbow</a></li><li><a href="FastText.html#predict">predict</a></li><li><a href="FastText.html#skipgram">skipgram</a></li><li><a href="FastText.html#test">test</a></li><li><a href="FastText.html#train">train</a></li></ul></div></li><li><a href="FastTextTools.html">FastTextTools</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FastTextTools_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FastTextTools.html#.generateLabelString">generateLabelString</a></li><li><a href="FastTextTools.html#.sanitizeString">sanitizeString</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="FastTextTools.html#.InputData">InputData</a></li><li><a href="FastTextTools.html#.InputObject">InputObject</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#generateLabelString">generateLabelString</a></li></ul></div>
+</nav>
+<div id="resizer"></div>
 
-<div id="main">
-
-    <h1 class="page-title">Class: FastTextTools</h1>
-
+<div class="main" id="main">
     
 
 
@@ -34,34 +52,57 @@
 </header>
 
 <article>
-    <div class="container-overview">
     
+        <div class="container-overview">
         
+            
+
+<dt>
+    
+        <h4 class="name" id="FastTextTools">
+            
+                new <span class="type-signature"></span>FastTextTools<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="tools.js.html">tools.js</a></code>,
+                <code><a href="tools.js.html#line4">line 4</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Exports an instance of FastTextTools class
+    </div>
+    
+
+    
 
     
 
     
-    <h4 class="name" id="FastTextTools"><span class="type-signature"></span>new FastTextTools<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
     
 
     
 
+    
 
+    
 
-<div class="description">
-    Exports an instance of FastTextTools class
-</div>
+    
 
+    
 
-
-
-
-
-
-
-
-
-
+    
 
 
 <dl class="details">
@@ -91,13 +132,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -105,24 +139,13 @@
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
-    </div>
+
+</dd>
+
+        
+        </div>
+    
 
     
 
@@ -141,34 +164,44 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id=".generateLabelString">
             
+                <span class="type-signature"><span class="icon green">static</span> </span>generateLabelString<span class="signature">(data, config)</span><span class="type-signature"> &rarr; {string}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="tools.js.html">tools.js</a></code>,
+                <code><a href="tools.js.html#line11">line 11</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Generates a single string which can be used to train or test the data from the given JSON array
+    </div>
+    
+
+    
 
     
 
     
-    <h4 class="name" id=".generateLabelString"><span class="type-signature">(static) </span>generateLabelString<span class="signature">(data, config)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
 
     
-
-
-
-<div class="description">
-    Generates a single string which can be used to train or test the data from the given JSON array
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
 <table class="params">
     <thead>
     <tr>
@@ -237,9 +270,43 @@
     </tbody>
 </table>
 
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
 
 
 
+<span class="param-type">string</span>
+
+
+
+
+
+- Converted string
+
+
+
+
+            
+    </div>
+    
+
+    
 
 
 <dl class="details">
@@ -269,13 +336,6 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tools.js.html">tools.js</a>, <a href="tools.js.html#line10">line 10</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -283,45 +343,9 @@
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Converted string
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
     
-
-
-
-
-    <h5>Examples</h5>
-    
+        <h5>Examples</h5>
+        
         <p class="code-caption">Generate labelled string</p>
     
     <pre class="prettyprint"><code>const FastTextTools = require('fasttext-node/tools');
@@ -342,35 +366,131 @@ const labelledData = FastTextTools.generateLabelString(data);</code></pre>
     <pre class="prettyprint"><code>__label__egg __label__custard __label__pudding Custard Pudding tasting like raw eggs
 __label__salt __label__curing __label__pink __label__usage Is Himalayan pink salt the same as the pink salt used for curing?</code></pre>
 
+    
 
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id=".sanitizeString">
+            
+                <span class="type-signature"><span class="icon green">static</span> </span>sanitizeString<span class="signature">(input)</span><span class="type-signature"> &rarr; {string}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="tools.js.html">tools.js</a></code>,
+                <code><a href="tools.js.html#line41">line 41</a></code>
+            </div>
+            
+        </h4>
 
         
     
+</dt>
+<dd>
 
     
-        <h3 class="subsection-title">Type Definitions</h3>
+    <div class="description">
+        Sanitizes a string for training. This effectively removes all dates, special characters, digits, timestamps etc.
+It also converts the string to lower case.
+    </div>
+    
 
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String to be sanitized</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
         
                 
-<h4 class="name" id=".InputData">InputData</h4>
+
+
+
+<span class="param-type">string</span>
 
 
 
 
 
+- Sanitized string
 
-    <h5>Type:</h5>
-    <ul>
-        <li>
+
+
+
             
-<span class="param-type">Array.&lt;InputObject></span>
+    </div>
+    
 
-
-        </li>
-    </ul>
-
-
-
+    
 
 
 <dl class="details">
@@ -400,10 +520,96 @@ __label__salt __label__curing __label__pink __label__usage Is Himalayan pink sal
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generate-labelled-data.js.html">generate-labelled-data.js</a>, <a href="generate-labelled-data.js.html#line9">line 9</a>
-    </li></ul></dd>
+
+    
+
+    
+</dl>
+
+
+    
+        <h5>Examples</h5>
+        
+        <p class="code-caption">Sanitize string</p>
+    
+    <pre class="prettyprint"><code>const FastTextTools = require('fasttext-node/tools');
+const data = "Thank you for your request for Rs123 recharge, benefit will be credited to your account";
+const sanitizedString = FastTextTools.sanitizeString(data);</code></pre>
+
+        <p class="code-caption">The following sanitized string can be then written to a file and the file can be used to train or test the model</p>
+    
+    <pre class="prettyprint"><code>thank you for your request for  recharge benefit will be credited to your account</code></pre>
+
+    
+
+</dd>
+
+            </dl>
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+
+<dt>
+<h4 class="name" id=".InputData">
+    InputData
+    
+    <div class="container-source members">
+        <code><a href="generate-labelled-data.js.html">generate-labelled-data.js</a></code>,
+        <code><a href="generate-labelled-data.js.html#line9">line 9</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;InputObject></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -414,31 +620,45 @@ __label__salt __label__curing __label__pink __label__usage Is Himalayan pink sal
 </dl>
 
 
+    
 
-
-
+    
+</dd>
 
             
                 
-<h4 class="name" id=".InputObject">InputObject</h4>
+
+<dt>
+<h4 class="name" id=".InputObject">
+    InputObject
+    
+    <div class="container-source members">
+        <code><a href="generate-labelled-data.js.html">generate-labelled-data.js</a></code>,
+        <code><a href="generate-labelled-data.js.html#line1">line 1</a></code>
+    </div>
+    
+</h4>
 
 
+</dt>
+<dd>
+    
 
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
 <span class="param-type">Object</span>
 
 
-        </li>
-    </ul>
+            </li>
+        </ul>
+    
+    -->
 
-
-
+    
 
 
     <h5 class="subsection-title">Properties:</h5>
@@ -543,13 +763,6 @@ __label__salt __label__curing __label__pink __label__usage Is Himalayan pink sal
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="generate-labelled-data.js.html">generate-labelled-data.js</a>, <a href="generate-labelled-data.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
 
     
 
@@ -557,11 +770,12 @@ __label__salt __label__curing __label__pink __label__usage Is Himalayan pink sal
 </dl>
 
 
+    
 
+    
+</dd>
 
-
-
-            
+            </dl>
     
 
     
@@ -574,17 +788,24 @@ __label__salt __label__curing __label__pink __label__usage Is Himalayan pink sal
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FastText.html">FastText</a></li><li><a href="FastTextTools.html">FastTextTools</a></li></ul><h3>Global</h3><ul><li><a href="global.html#generateLabelString">generateLabelString</a></li></ul>
-</nav>
-
-<br class="clear">
-
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Thu Sep 07 2017 00:30:00 GMT+0530 (IST)
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text"><a href='http:\jibinmathews.in'>©jazzyarchitects</a></div>
 </footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+    <script>
+        var id = 'FastTextTools_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
 </body>
 </html>

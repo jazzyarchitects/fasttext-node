@@ -1,0 +1,14 @@
+{
+  "opts": {
+    "template": "node_modules/tui-jsdoc-template"
+  },
+  "templates": {
+    "useCollapsibles": true,
+    "name": "FastText Node",
+    "footerText": "<a href='http:\\jibinmathews.in'>©jazzyarchitects</a>",
+    "tabNames": {
+      "api": "API",
+      "tutorials": "Examples"
+    }
+  }
+}

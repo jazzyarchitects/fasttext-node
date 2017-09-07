@@ -1,8 +1,10 @@
-// Place your settings in this file to overwrite default and user settings.
 {
+  // Place your settings in this file to overwrite default and user settings.
   "eslint.enable": true,
   "eslint.options": {
     "configFile": ".eslintrc.js"
   },
-  "eslint.validate": [ "javascript", { "language": "html", "autoFix": true } ]
+  "eslint.validate": ["javascript", { "language": "html", "autoFix": true }],
+
+  "editor.wordWrapColumn": 150
 }

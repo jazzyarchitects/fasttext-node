@@ -5,7 +5,7 @@
   "scripts": {
     "install": "./install.sh",
     "test": "node test/index.js",
-    "docs": "./node_modules/.bin/jsdoc lib/ -d docs"
+    "docs": "./node_modules/.bin/jsdoc lib/ -d docs -c jsdoc-config.json"
   },
   "bugs": {
     "url": "https://github.com/jazzyarchitects/fasttext-node/issues",
@@ -16,7 +16,8 @@
     "url": "https://github.com/jazzyarchitects/fasttext-node.git"
   },
   "main": "index.js",
-  "author": "Jibin Mathews<jibinmathews7@gmail.com>(http://www.jibinmathews.in)",
+  "author":
+    "Jibin Mathews<jibinmathews7@gmail.com>(http://www.jibinmathews.in)",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
@@ -44,6 +45,7 @@
     "string-to-stream": "^1.1.0"
   },
   "devDependencies": {
-    "jsdoc": "^3.5.4"
+    "jsdoc": "^3.5.4",
+    "tui-jsdoc-template": "^1.2.2"
   }
 }

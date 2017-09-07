@@ -10,7 +10,7 @@ async function trainTest() {
       'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt',
       {
         epoch: 50,
-        model: 'my-training-model',
+        model: 'my-training-model'
       }
     );
   } catch (err) {
@@ -26,10 +26,10 @@ async function testData() {
     const result = await fastext.predict(
       [
         'Custard Pudding tasting like raw eggs',
-        'Is Himalayan pink salt the same as the pink salt used for curing?',
+        'Is Himalayan pink salt the same as the pink salt used for curing?'
       ],
       {
-        model: 'my-training-model',
+        model: 'my-training-model'
       }
     );
 
@@ -50,7 +50,7 @@ async function testAcurracy() {
       'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt',
       {
         labelCount: 5,
-        model: 'my-training-model',
+        model: 'my-training-model'
       }
     );
   } catch (err) {
@@ -61,16 +61,15 @@ async function testAcurracy() {
 }
 
 async function generateLabeledData() {
-  console.dir(FastTextTools.toString());
   const data = [
     {
       text: 'Custard Pudding tasting like raw eggs',
-      labels: ['egg', 'custard', 'pudding'],
+      labels: ['egg', 'custard', 'pudding']
     },
     {
       text: 'Is Himalayan pink salt the same as the pink salt used for curing?',
-      labels: ['salt', 'curing', 'pink', 'usage'],
-    },
+      labels: ['salt', 'curing', 'pink', 'usage']
+    }
   ];
   const labelledData = FastTextTools.generateLabelString(data);
   console.log(colors.yellow.bold('Labelled Data'));
@@ -79,11 +78,54 @@ async function generateLabeledData() {
   return Promise.resolve(labelledData);
 }
 
+async function skipgramTest() {
+  console.log(colors.yellow('Starting skipgram test'));
+  const fastext = new FastText({ logs: true });
+
+  const result = await fastext.skipgram(
+    'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/skipgram.train.txt',
+    {
+      dim: 5,
+      model: 'my-training-model'
+    }
+  );
+
+  console.log('SKipgram result', result);
+  return result;
+}
+
+async function cbowTest() {
+  console.log(colors.yellow('Starting skipgram test'));
+  const fastext = new FastText({ logs: true });
+
+  const result = await fastext.cbow(
+    'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/skipgram.train.txt',
+    {
+      dim: 5,
+      model: 'my-training-model'
+    }
+  );
+
+  console.log('cbow result', result);
+  return result;
+}
+
+async function sanitizeString() {
+  const data =
+    'Thank you for your request for Rs123 recharge, benefit will be credited to your account';
+  const sanitizedString = FastTextTools.sanitizeString(data);
+  console.log('Sanitized string', sanitizedString);
+  return Promise.resolve(sanitizedString);
+}
+
 Promise.resolve()
-  .then(generateLabeledData)
-  .then(trainTest)
-  .then(testData)
-  .then(testAcurracy)
+  // .then(generateLabeledData)
+  // .then(trainTest)
+  // .then(testData)
+  // .then(testAcurracy)
+  // .then(skipgramTest)
+  // .then(cbowTest)
+  .then(sanitizeString)
   .then(() => {
     console.log(colors.bold.green('Finished test'));
     process.exit(0);

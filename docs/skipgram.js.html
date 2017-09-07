@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: generate-labelled-data.js | FastText Node</title>
+    <title>Source: skipgram.js | FastText Node</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -46,48 +46,110 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @typedef {Object} InputObject
- *
- * @property {string} text The input text whose labels are given
- * @property {Array.&lt;string>} labels Array of labels for the given text
- * @memberof FastTextTools
- */
+            <pre class="prettyprint source linenums"><code>import fasttext from './fasttext-exec';
+import colors from 'colors';
+import exec from './exec';
+import isURL from 'is-url';
+import path from 'path';
+import fs from 'fs';
+
+const defaultOptions = {
+  dim: 100,
+  ws: 3,
+  neg: 5,
+  maxn: 5,
+  minn: 2,
+  model: 'training-model-unsupervised'
+};
 
 /**
- * @typedef {Array.&lt;InputObject>} InputData
- * @memberof FastTextTools
- */
-
-/**
- * Converts a json array to a fastText readable labelled data
+ * Function to train a skipgram model
  *
- * @global
- * @function generateLabelString
- * @param {InputData} data - Data object containing labels and training data
- * @param {object} config - Module config
+ * @export
+ * @param {string} trainData URL or filename
+ * @param {string} [options={}] Options for training model
+ * @property {number} [options.dim=100] Size of word vector
+ * @property {number} [options.ws=5] Size of context window
+ * @property {number} [options.neg=5] Number of negatives sampled
+ * @property {number} [options.maxn=5] Maximum wordGram length
+ * @property {number} [options.minn=3] Minimum wordGram length
+ * @property {string} [options.model='training-model-unsupervised'] The model name which will be used to export the saved model
+ * @returns {object} Returns the accuracy of the model according to the given test data set
  */
-export default function labelGenerator(data, config) {
-  let finalData = ``;
+export default async function trainSkipGram(
+  trainData,
+  options = {},
+  fastTextConfig = {}
+) {
+  let executeFunction = 'skipgram';
 
-  /**
-   * [
-   *    {
-   *        text: 'Input String',
-   *        labels: [ 'label1', 'label2' ]
-   *    }
-   * ]
-   */
-
-  for (let dataObject of data) {
-    let labels = '';
-    for (let label of dataObject.labels) {
-      labels += `__label__${label} `;
-    }
-    finalData += `${labels}${dataObject.text}\n`;
+  if (options.cbow === true) {
+    executeFunction = 'cbow';
   }
 
-  return finalData;
+  let filename = trainData;
+
+  // Check if a url is passed
+  if (isURL(trainData)) {
+    // Download the data from the url
+    fastTextConfig.logs &amp;&amp;
+      console.log(
+        colors.yellow(`Downloading ${executeFunction} training file...`)
+      );
+    const output = await exec(`curl ${trainData} -o test.txt`);
+    fastTextConfig.logs &amp;&amp; console.log(output);
+    filename = path.join(__dirname, '..', '..', 'test.txt');
+  }
+
+  if (!fs.existsSync(filename)) {
+    fastTextConfig.logs &amp;&amp;
+      console.log(
+        colors.red(
+          `Test data should be a path/url to some txt file. Check the arguments for FastText.${executeFunction}() function`
+        )
+      );
+    return false;
+  }
+  fastTextConfig.logs &amp;&amp;
+    console.log(colors.yellow(`Training ${executeFunction} fasttext model`));
+
+  const defaultOptionKeys = Object.keys(defaultOptions);
+  const finalOptions = Object.assign(defaultOptions, options);
+  finalOptions.model =
+    options.model || fastTextConfig.model || defaultOptions.model;
+  if (finalOptions.model.indexOf(path.sep) === -1) {
+    // if only name is provided, then store in parent folder
+    finalOptions.model = path.join(__dirname, '..', '..', finalOptions.model);
+  }
+
+  let arg = '';
+
+  const optionKeys = Object.keys(finalOptions);
+
+  // Prevent unsupported keys from executing with the command
+  for (let key of optionKeys) {
+    if (defaultOptionKeys.indexOf(key) === -1) {
+      continue;
+    }
+    if (key === 'model') {
+      continue;
+    }
+    arg += ` -${key} ${finalOptions[key]}`;
+  }
+
+  // eslint-disable-next-line
+  const trainingCommand = `${executeFunction} -input ${filename} -output ${finalOptions[
+    'model'
+  ]}${arg}`;
+
+  const { stderr, stdout } = await fasttext(trainingCommand);
+
+  const value = `${stdout}\n${stderr}`;
+
+  fastTextConfig.logs &amp;&amp;
+    console.log(colors.green(`${executeFunction} training model: ${value}`));
+
+  return value;
 }
 </code></pre>
         </article>

@@ -5,5 +5,6 @@ function FastTextTools(config) {
 }
 
 FastTextTools.generateLabelString = FastText.default.generateLabelString;
+FastTextTools.sanitizeString = FastText.default.sanitizeString;
 
 module.exports = FastTextTools;
