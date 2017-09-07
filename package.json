@@ -1,6 +1,6 @@
 {
   "name": "fasttext-node",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Node wrapper around facebook's fasttext library",
   "scripts": {
     "install": "./install.sh",
