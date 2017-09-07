@@ -353,7 +353,7 @@
             
             <div class="container-source members">
                 <code><a href="index.js.html">index.js</a></code>,
-                <code><a href="index.js.html#line216">line 216</a></code>
+                <code><a href="index.js.html#line218">line 218</a></code>
             </div>
             
         </h4>
@@ -847,7 +847,7 @@ Function to train a CBOW model
             
             <div class="container-source members">
                 <code><a href="index.js.html">index.js</a></code>,
-                <code><a href="index.js.html#line115">line 115</a></code>
+                <code><a href="index.js.html#line117">line 117</a></code>
             </div>
             
         </h4>
@@ -1218,7 +1218,7 @@ Predicts the probability label according to a given model
             
             <div class="container-source members">
                 <code><a href="index.js.html">index.js</a></code>,
-                <code><a href="index.js.html#line186">line 186</a></code>
+                <code><a href="index.js.html#line188">line 188</a></code>
             </div>
             
         </h4>
@@ -1717,7 +1717,7 @@ Difference between CBOW and SKIPGRAM model can be found at:
             
             <div class="container-source members">
                 <code><a href="index.js.html">index.js</a></code>,
-                <code><a href="index.js.html#line151">line 151</a></code>
+                <code><a href="index.js.html#line153">line 153</a></code>
             </div>
             
         </h4>
@@ -2067,7 +2067,7 @@ Function to test the trained model against a set of test data.
             
             <div class="container-source members">
                 <code><a href="index.js.html">index.js</a></code>,
-                <code><a href="index.js.html#line57">line 57</a></code>
+                <code><a href="index.js.html#line59">line 59</a></code>
             </div>
             
         </h4>
@@ -2079,8 +2079,7 @@ Function to test the trained model against a set of test data.
 
     
     <div class="description">
-        <hr />
-Function to train a model from the given training data. This function uses supervised learning for training the model.
+        Function to train a model from the given training data. This function uses supervised learning for training the model.
 <ul>
 <li>If the trainData param is a url the fetch the file from the url</li>
 <li>If the trainData param is a file name then read that filename</li>
@@ -2287,7 +2286,7 @@ Function to train a model from the given training data. This function uses super
             
                 <td class="default">
                 
-                    0.01
+                    0.1
                 
                 </td>
             
@@ -2332,6 +2331,123 @@ Function to train a model from the given training data. This function uses super
             
 
             <td class="description last">The rate at which learning rate is to be updated while training</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dim</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    5
+                
+                </td>
+            
+
+            <td class="description last">Size of word vector</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ws</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    5
+                
+                </td>
+            
+
+            <td class="description last">Size of context window</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>neg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    5
+                
+                </td>
+            
+
+            <td class="description last">Number of negatives sampled</td>
         </tr>
 
     

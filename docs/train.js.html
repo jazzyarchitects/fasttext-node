@@ -59,6 +59,9 @@ const defaultOptions = {
   lr: 0.01,
   lrUpdateRate: 100,
   wordNgrams: 2,
+  dim: 200,
+  ws: 3,
+  neg: 2,
   loss: 'ns',
   thread: 12,
   model: path.join(__dirname, '..', '..', 'training-model')
@@ -76,7 +79,10 @@ const defaultOptions = {
  * @property {number} [options.epoch=25] Epoch for the training
  * @property {number} [options.lr=0.1] Learning rate for training model
  * @property {number} [options.lrUpdateRate=100] The rate at which learning rate is to be updated while training
- * @property {number} [options.wordNgrams=2] Max length of word ngram
+ * @property {number} [options.wordNgrams=2] Max length of word n gram
+ * @property {number} [options.dim=5] Size of word vector
+ * @property {number} [options.ws=5] Size of context window
+ * @property {number} [options.neg=5] Number of negatives sampled
  * @property {'ns'|'hs'|'softmax'} [options.loss='ns'] Loss function. Should be one of 'ns' 'hs' or 'softmax'
  * @property {number} [options.thread=12] Number of threads
  * @property {string} [options.model='training-model'] The model name which will be used to export the saved model
