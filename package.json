@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Node wrapper around facebook's fasttext library",
   "scripts": {
-    "install": "./install.sh",
+    "postinstall": "./install.sh",
     "test": "node test/index.js",
     "docs": "./node_modules/.bin/jsdoc lib/ -d docs -c jsdoc-config.json"
   },
