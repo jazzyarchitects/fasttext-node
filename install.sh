@@ -73,6 +73,9 @@ echo ""
 echo -e "\033[0;32m\033[1mBuilding node module\033[0m"
 
 cd ..
-./node_modules/.bin/grunt build
+
+ROOT=$(pwd)
+
+${ROOT}/node_modules/.bin/grunt build
 
 echo -e "\033[0;32m\033[1mFinished installing module\033[0m"
