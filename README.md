@@ -49,7 +49,8 @@ To use this module in your code, you can import this directly:
 The module exposes a ___train___ method which can be used to train a new model. The training methodology is **supervised** learning.
 
 ```js
-  const trainResult = await fastext.train('https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt', 
+  const trainFileUri = 'https://raw.githubusercontent.com/jazzyarchitects/fasttext-node/master/train.txt'
+  const trainResult = await fastext.train(trainFileUri, 
     { /* options */ 
     epoch: 50,
     lr: 0.01
