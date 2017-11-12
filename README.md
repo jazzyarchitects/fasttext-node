@@ -5,6 +5,7 @@ A node wrapper around FastText library.
 [![License](https://img.shields.io/npm/l/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
 [![NPM Downloads](https://img.shields.io/npm/dt/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
 [![NPM Downloads](https://img.shields.io/npm/dm/fasttext-node.svg)](https://www.npmjs.com/package/fasttext-node)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/fasttext-node/Lobby)
 
 [![NPM](https://nodei.co/npm/fasttext-node.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fasttext-node/)
 <hr />
