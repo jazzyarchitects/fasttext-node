@@ -10,6 +10,12 @@ A node wrapper around FastText library.
 [![NPM](https://nodei.co/npm/fasttext-node.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fasttext-node/)
 <hr />
 
+## Platform Support
+[![Linux Supported](https://img.shields.io/badge/Linux-Supported-brightgreen.svg)](https://github.com/jazzyarchitects/fasttext-node)  
+[![MacOS Supported](https://img.shields.io/badge/MacOS-Supported-brightgreen.svg)](https://github.com/jazzyarchitects/fasttext-node)  
+[![Windows Not Supported](https://img.shields.io/badge/Windows-Not%20Supported-red.svg)](https://github.com/jazzyarchitects/fasttext-node)  
+
+
 ## About Fast Text
 fastText is a library for efficient learning of word representations and sentence classification.
 
